@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<!-- Hell yeah this is made with raw HTML and CSS -->
+
+<html>
+    <head>
+        <title>Did you cache your config?</title>
+
+        <link rel="stylesheet" href="/assets/styles.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#f9efe4">
+
+        <meta property="og:title" content="Did you cache your config?" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://didyoucacheyourconfig.com" />
+        <meta property="og:description" content="Have you tried running php artisan optimize:clear?" />
+    </head>
+
+    <body>
+        <header>
+            <h1>Did you cache your config?</h1>
+        </header>
+
+        <main>
+            <div class="step">
+                <p>you can find this out by running</p>
+                <div class="window">
+                    <div class="window__title-bar">
+                        <div class="window__title-bar--lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="window__title-bar-title">did i?</span>
+                    </div>
+                    <div class="window__body window__body--no-wrap">
+                        <div>php artisan about</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <p>if it is cached then clear it with</p>
+                <div class="window">
+                    <div class="window__title-bar">
+                        <div class="window__title-bar--lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="window__title-bar-title">solution</span>
+                    </div>
+                    <div class="window__body window__body--no-wrap">
+                        <div>php artisan optimize:clear</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <p>and never run any of the following commands in local development again</p>
+                <div class="window">
+                    <div class="window__title-bar">
+                        <div class="window__title-bar--lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="window__title-bar-title">trash in local</span>
+                    </div>
+                    <div class="window__body window__body window__body--no-wrap window__body--no-copy">
+                        <div>php artisan optimize</div>
+                        <div>php artisan config:cache</div>
+                        <div>php artisan event:cache</div>
+                        <div>php artisan route:cache</div>
+                        <div>php artisan view:cache</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <p>answer our survey on why you cached it in the first place <span class="disclaimer">(answers are ignored)</span></p>
+                <div class="window">
+                    <div class="window__title-bar">
+                        <div class="window__title-bar--lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="window__title-bar-title">survey</span>
+                    </div>
+                    <div class="window__body window__body--gap" id="survey_body">
+                        <button class="btn--full" onclick="revealBean()">
+                            i saw a stack overflow answer
+                        </button>
+                        <button class="btn--full" onclick="revealBean()">
+                            a human told me to
+                        </button>
+                        <button class="btn--full" onclick="revealBean()">
+                            chatgpt told me to
+                        </button>
+                        <button class="btn--full" onclick="revealBean()">
+                            other
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            made with &lt;3 by <a href="https://evba.uk">evan</a>
+        </footer>
+    </body>
+
+    <template id="survey_response">
+        <div>
+            help bring back the bean merge<br />
+    
+            <a href="https://github.com/laravel/framework/pull/44749">https://github.com/laravel/framework/pull/44749</a>
+        </div>
+    </template>
+
+    <script>
+        function revealBean() {
+            document.getElementById('survey_body').innerHTML = document.getElementById('survey_response').innerHTML
+        }
+    </script>
+</html>
